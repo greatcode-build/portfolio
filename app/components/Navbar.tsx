@@ -2,14 +2,30 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { navLinks } from "../constants";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
+  const [isScroll, setIsScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScroll(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <main>
-      <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center z-50 mt-2">
+    <header>
+      <nav
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center z-50 mt-2 ${isScroll ? "bg-white/50 backdrop-blur-lg shadow-sm" : ""}`}
+      >
         <div className="shrink-0">
           <Link href="#top">
             <Image
@@ -22,22 +38,16 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <ul className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-6 lg:gap-8 rounded-full px-6 py-3 font-ovo bg-white shadow-sm bg-opacity-50">
-          <li>
-            <Link href="#top">Home</Link>
-          </li>
-          <li>
-            <Link href="#about">About me</Link>
-          </li>
-          <li>
-            <Link href="#services">Services</Link>
-          </li>
-          <li>
-            <Link href="#work">My Work</Link>
-          </li>
-          <li>
-            <Link href="#contact">Contact me</Link>
-          </li>
+        <ul
+          className={`hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-6 lg:gap-8 rounded-full px-6 py-3 font-ovo ${isScroll ? "" : "bg-white/50 shadow-sm"}`}
+        >
+          {navLinks.map(({ path, label }) => (
+            <li key={label}>
+              <Link href={path} onClick={() => setMenu(false)}>
+                {label}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         <div className="ml-auto flex items-center gap-4">
@@ -84,33 +94,15 @@ const Navbar = () => {
             onClick={() => setMenu(false)}
           />
         </div>
-        <li>
-          <Link href="#top" onClick={() => setMenu(false)}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link href="#about" onClick={() => setMenu(false)}>
-            About me
-          </Link>
-        </li>
-        <li>
-          <Link href="#services" onClick={() => setMenu(false)}>
-            Services
-          </Link>
-        </li>
-        <li>
-          <Link href="#work" onClick={() => setMenu(false)}>
-            My Work
-          </Link>
-        </li>
-        <li>
-          <Link href="#contact" onClick={() => setMenu(false)}>
-            Contact me
-          </Link>
-        </li>
+        {navLinks.map(({ path, label }) => (
+          <li key={label}>
+            <Link href={path} onClick={() => setMenu(false)}>
+              {label}
+            </Link>
+          </li>
+        ))}
       </ul>
-    </main>
+    </header>
   );
 };
 

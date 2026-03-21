@@ -17,7 +17,7 @@ const ovo = Ovo({
 export const metadata: Metadata = {
   title: "Portfolio - Great Lucky",
   description: "Portfolio app built by Nextjs and Tailwind",
-  icons: "/logo.png",
+  icons: "/images/logo.png",
 };
 
 export default function RootLayout({
