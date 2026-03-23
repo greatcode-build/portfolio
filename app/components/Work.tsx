@@ -1,20 +1,55 @@
+"use client";
+
 import Image from "next/image";
 import { workList } from "../constants";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 const Work = () => {
   return (
-    <div id="work" className="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center text-lg mb-2 font-ovo">My portfolio</h4>
-      <h2 className="text-center text-5xl font-ovo">My latest work</h2>
-      <p className="text-center mx-auto mt-5 max-w-2xl mb-12 font-ovo">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      id="work"
+      className="w-full px-[12%] py-10 scroll-mt-20"
+    >
+      <motion.h4
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="text-center text-lg mb-2 font-ovo"
+      >
+        My portfolio
+      </motion.h4>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="text-center text-5xl font-ovo"
+      >
+        My latest work
+      </motion.h2>
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+        className="text-center mx-auto mt-5 max-w-2xl mb-12 font-ovo"
+      >
         I&apos;m a paragraph. Click here to add your own text and edit me.
         It&apos;s easy. Just click “Edit Text” or double click me to add your
         own content and make changes to the font.
-      </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 my-10 gap-5">
+      </motion.p>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.9 }}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 my-10 gap-5 dark:text-black"
+      >
         {workList.map((project, index) => (
-          <div
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
             key={index}
             style={{ backgroundImage: `url(${project.backgroundImage})` }}
             className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
@@ -34,23 +69,29 @@ const Work = () => {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
-      <Link
-        href=""
-        className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 my-20 mx-auto hover:bg-lightHover duration-500"
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1.1 }}
       >
-        Show more
-        <Image
-          src="/icons/arrow-right.svg"
-          width={16}
-          height={16}
-          alt="show more icon"
-          className="w-4"
-        />
-      </Link>
-    </div>
+        <Link
+          href=""
+          className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 my-20 mx-auto hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover"
+        >
+          Show more
+          <Image
+            src="/icons/arrow-right.svg"
+            width={16}
+            height={16}
+            alt="show more icon"
+            className="w-4 dark:invert"
+          />
+        </Link>
+      </motion.div>
+    </motion.div>
   );
 };
 

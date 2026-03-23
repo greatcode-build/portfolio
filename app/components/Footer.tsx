@@ -10,7 +10,7 @@ const Footer = () => {
           alt="logo"
           width={60}
           height={60}
-          className="w-15 mx-auto mbb-2"
+          className="w-15 mx-auto mb-2 dark:invert"
         />
         <div className="w-max mx-auto flex items-center gap-2">
           <Image
@@ -18,7 +18,7 @@ const Footer = () => {
             alt="logo"
             width={12}
             height={12}
-            className="w-6"
+            className="w-6 dark:invert"
           />
           greatl46@outlook.com
         </div>

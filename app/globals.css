@@ -8,3 +8,5 @@
   --font-outfit: var(--font-outfit), "sans-serif";
   --font-ovo: var(--font-ovo), "serif";
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
