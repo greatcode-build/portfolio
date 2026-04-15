@@ -24,8 +24,7 @@ A modern personal portfolio template built with **Next.js**, **TypeScript**, **T
 
 ### Prerequisites
 
-- Node.js 18+ or compatible version
-- npm (bundled with Node.js)
+- Node.js 18+
 
 ### Install dependencies
 
