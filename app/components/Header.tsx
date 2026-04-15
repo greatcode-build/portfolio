@@ -42,10 +42,9 @@ const Header = () => {
         transition={{ duration: 0.6, delay: 0.7 }}
         className="max-w-2xl mx-auto font-ovo"
       >
-        I&apos;m a paragraph. Click here to add your own text and edit me.
-        It&apos;s easy. Just click “Edit Text” or double click me to add your
-        own content and make changes to the font. I&apos;m a great place for you
-        to tell a story and let your users know a little more about you.
+        I build clean, modern, and scalable interfaces with smooth interactions
+        and strong user experience. I focus on performance, usability, and how
+        every product feels in real use.
       </motion.p>
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <motion.div
@@ -73,7 +72,7 @@ const Header = () => {
           transition={{ duration: 0.6, delay: 1.2 }}
         >
           <Link
-            href="/my-resume"
+            href="/my_resume.pdf"
             className="px-10 py-3 rounded-full bg-white dark:text-black border-gray-500 border flex items-center gap-2"
             download
           >

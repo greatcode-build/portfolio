@@ -56,11 +56,14 @@ const About = () => {
           className="flex-1"
         >
           <p className="max-w-2xl mb-10 font-ovo">
-            I&apos;m a paragraph. Click here to add your own text and edit me.
-            It&apos;s easy. Just click “Edit Text” or double click me to add
-            your own content and make changes to the font. I&apos;m a great
-            place for you to tell a story and let your users know a little more
-            about you.
+            I’m a frontend engineer focused on building responsive, user
+            centered web applications. I turn ideas into functional products
+            with clean structure and strong performance. I have built different
+            applications, including an e-commerce web application, an audio and
+            video conferencing application, and an expense tracker. You can
+            check them out in the project section. I enjoy solving user
+            interface problems, improving user flows, and delivering interfaces
+            that feel smooth and reliable.
           </p>
           <motion.ul
             initial={{ opacity: 0 }}

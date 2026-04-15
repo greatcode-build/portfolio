@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { servicesList } from "../constants";
-import Link from "next/link";
 import { motion } from "motion/react";
 
 const Services = () => {
@@ -36,9 +35,9 @@ const Services = () => {
         transition={{ duration: 0.5, delay: 0.7 }}
         className="text-center mx-auto mt-5 max-w-2xl mb-12 font-ovo"
       >
-        I&apos;m a paragraph. Click here to add your own text and edit me.
-        It&apos;s easy. Just click “Edit Text” or double click me to add your
-        own content and make changes to the font.
+        I offer frontend development, UI implementation, API integration, and
+        performance optimization. I build responsive, scalable web applications
+        that are fast, user friendly, and ready for real world use.
       </motion.p>
       <motion.div
         initial={{ opacity: 0 }}
@@ -46,7 +45,7 @@ const Services = () => {
         transition={{ duration: 0.6, delay: 0.9 }}
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 my-10"
       >
-        {servicesList.map(({ icon, title, description, link }) => (
+        {servicesList.map(({ icon, title, description }) => (
           <motion.div
             whileHover={{ scale: 1.05 }}
             key={title}
@@ -65,16 +64,6 @@ const Services = () => {
             <p className="text-sm text-gray-600 leading-5 dark:text-white/50">
               {description}
             </p>
-            <Link href={link} className="flex items-center gap-2 text-sm mt-5">
-              Read more
-              <Image
-                src="/icons/arrow-right.svg"
-                alt="arrow-right"
-                height={16}
-                width={16}
-                className="w-4 dark:invert"
-              />
-            </Link>
           </motion.div>
         ))}
       </motion.div>

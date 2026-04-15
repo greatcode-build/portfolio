@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { motion } from "motion/react";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const [result, setResult] = useState("");
@@ -20,8 +20,15 @@ const Contact = () => {
     });
 
     const data = await response.json();
-    setResult(data.success ? "Success!" : "Error");
-    form.reset();
+    if (data.success) {
+      setResult("");
+      toast.success("Form Submitted Successfully");
+      form.reset();
+    } else {
+      console.error("API error", data);
+      toast.error("Something went wrong. Please try again.");
+      setResult("");
+    }
   };
 
   return (
@@ -54,9 +61,9 @@ const Contact = () => {
         transition={{ duration: 0.5, delay: 0.7 }}
         className="text-center mx-auto mt-5 max-w-2xl mb-12 font-ovo"
       >
-        I&apos;m a paragraph. Click here to add your own text and edit me.
-        It&apos;s easy. Just click “Edit Text” or double click me to add your
-        own content and make changes to the font.
+        I am available for frontend roles and contract work. I help teams build
+        new products or improve existing ones. Send a message and let’s get
+        started
       </motion.p>
       <motion.form
         initial={{ opacity: 0 }}
@@ -74,7 +81,7 @@ const Contact = () => {
             name="name"
             placeholder="Enter your name"
             required
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/50 dark:border-white/90"
+            className="p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/50 dark:border-white/90 md:col-span-1"
           />
           <motion.input
             initial={{ x: 50, opacity: 0 }}
@@ -84,7 +91,7 @@ const Contact = () => {
             name="email"
             placeholder="Enter your email"
             required
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/50 dark:border-white/90"
+            className="p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/50 dark:border-white/90 md:col-span-2 xl:col-span-3"
           />
         </div>
         <motion.textarea
@@ -102,17 +109,10 @@ const Contact = () => {
           transition={{ duration: 0.3 }}
           type="submit"
           className="w-max py-3 px-8 flex items-center justify-between gap-2 bg-black/80 text-white mx-auto rounded-full hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover"
+          disabled={result === "Sending..."}
         >
-          Submit now
-          <Image
-            src="/icons/arrow-right.svg"
-            alt="arrow-right icon"
-            width={16}
-            height={16}
-            className="w-4 invert"
-          />
+          {result ? result : "Submit now"}
         </motion.button>
-        <p className="mt-4">{result}</p>
       </motion.form>
     </motion.div>
   );

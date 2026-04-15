@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 @theme {
   --color-lightHover: #fcf4ff;
   --color-darkHover: #2a004a;
@@ -8,5 +14,3 @@
   --font-outfit: var(--font-outfit), "sans-serif";
   --font-ovo: var(--font-ovo), "serif";
 }
-
-@custom-variant dark (&:where(.dark, .dark *));

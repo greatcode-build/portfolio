@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Great Lucky Portfolio
 
-## Getting Started
+A modern personal portfolio template built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **motion/react**. This project showcases a responsive landing page for a frontend engineer, including animated sections, dark mode support, and a contact form integration.
 
-First, run the development server:
+## Why this project is useful
+
+- **Modern portfolio layout** with sections for Home, About, Services, Work, and Contact
+- **Responsive UI** designed for desktop and mobile devices
+- **Dark mode support** using `next-themes`
+- **Smooth animations** powered by `motion/react`
+- **Contact form integration** with Web3Forms support
+- **Easy customization** thanks to modular React components and reusable data-driven sections
+
+## Features
+
+- Animated header and section transitions
+- Sticky responsive navbar with mobile menu
+- Image optimization with Next.js `Image`
+- Dark/light theme switcher
+- Portfolio work cards and service cards
+- Contact form powered by `react-toastify` notifications
+
+## Getting started
+
+### Prerequisites
+
+- Node.js 18+ or compatible version
+- npm (bundled with Node.js)
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+- `app/` — Next.js App Router pages and layout
+- `app/components/` — reusable UI sections: `Navbar`, `Header`, `About`, `Services`, `Work`, `Contact`, `Footer`
+- `app/constants/` — navigation, services, work, and profile data used across the site
+- `public/` — static images and icon assets
+- `globals.css` — Tailwind and global styling
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Configuration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The contact form uses Web3Forms via an environment variable.
 
-## Deploy on Vercel
+Create a `.env.local` file at the repository root with:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```env
+NEXT_PUBLIC_FORM_ACCESS_KEY=your_web3forms_access_key
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> If the environment key is missing, the contact form submission will fail.
+
+## Customization notes
+
+- Replace placeholder content in `app/components/Header.tsx`, `app/components/About.tsx`, and other sections with your personal copy
+- Update portfolio entries in `app/constants/index.ts`
+- Swap images in `public/images/` with your own branding
+
+## Dependencies
+
+Key libraries in this project:
+
+- `next` — App Router and server-rendered React
+- `react` / `react-dom` — UI rendering
+- `typescript` — typed JavaScript
+- `tailwindcss` — utility-first styling
+- `next-themes` — theme switching
+- `motion` — animation engine
+- `react-toastify` — toast notifications
+
+## Where to get help
+
+- File an issue on the repository
+- Reach out to the maintainer through the contact form after deployment
+- Consult official docs for framework-specific questions:
+  - `next` docs
+  - `tailwindcss` docs
+  - `react-toastify` docs
+
+## Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
+
+If you want to add documentation or improve the layout, please open an issue first so we can coordinate.
+
+## Maintainer
+
+- Maintained by **Great Lucky**
+
+---
+
+> This repository is a personal portfolio starter built for frontend developers and designers who want a clean, animated landing page with dark mode and contact form support.

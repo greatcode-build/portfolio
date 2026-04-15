@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
@@ -9,6 +10,7 @@ import { Work } from "./components/Work";
 export default function Home() {
   return (
     <main>
+      <ToastContainer />
       <Navbar />
       <Header />
       <About />
