@@ -1,16 +1,16 @@
 export const infoList = [
   {
-    icon: "/icons/code.png",
+    icon: "/images/code.png",
     title: "Languages",
     description: "HTML, CSS, JAVASCRIPT, REACT, TAILWIND, NEXTJS",
   },
   {
-    icon: "/icons/education.png",
+    icon: "/images/education.png",
     title: "Education",
     description: "B.Sc in Mathematics",
   },
   {
-    icon: "/icons/projects.png",
+    icon: "/images/projects.png",
     title: "Projects",
     description: "Built more than 10 projects",
   },
@@ -21,7 +21,7 @@ export const toolsList = [
   "/icons/figma.svg",
   "/icons/git.svg",
   "/icons/supabase.svg",
-  "/icons/github.png",
+  "/images/github.png",
   "/icons/visual-studio.svg",
 ];
 
