@@ -118,7 +118,7 @@ const About = () => {
                   alt="tools"
                   width={20}
                   height={20}
-                  className="w-5 sm:w-7"
+                  className="w-5 sm:w-7 dark:invert"
                 />
               </motion.li>
             ))}
