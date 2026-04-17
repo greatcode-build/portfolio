@@ -41,19 +41,19 @@ export const servicesList = [
       "I build responsive web applications using HTML, CSS, React, Tailwind CSS, and Next.js, with a focus on performance and usability",
   },
   {
-    icon: "/icons/ui.png",
+    icon: "/images/ui.png",
     title: "UI integration",
     description:
       "I convert Figma designs into accurate, responsive interfaces with attention to spacing, layout, and accessibility",
   },
   {
-    icon: "/icons/api.png",
+    icon: "/images/api.png",
     title: "API Integration",
     description:
       "I integrate REST APIs into web applications, ensuring seamless data flow, manage states and robust functionality",
   },
   {
-    icon: "/icons/optimization.png",
+    icon: "/images/optimization.png",
     title: "Performance Optimization",
     description:
       "I improve load speed, reduce unnecessary renders, and optimize frontend performance for better user experience",
