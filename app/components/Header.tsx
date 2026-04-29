@@ -72,7 +72,7 @@ const Header = () => {
           transition={{ duration: 0.6, delay: 1.2 }}
         >
           <Link
-            href="/my_resume.pdf"
+            href="/Great_Lucky_Resume.pdf"
             className="px-10 py-3 rounded-full bg-white dark:text-black border-gray-500 border flex items-center gap-2"
             download
           >
