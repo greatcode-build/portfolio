@@ -35,9 +35,8 @@ const Work = () => {
         transition={{ duration: 0.5, delay: 0.7 }}
         className="text-center mx-auto mt-5 max-w-2xl mb-12 font-ovo"
       >
-        I&apos;m a paragraph. Click here to add your own text and edit me.
-        It&apos;s easy. Just click “Edit Text” or double click me to add your
-        own content and make changes to the font.
+      Projects that highlight my ability to design, build, and ship production ready applications.
+     Focused on performance, user experience, and practical results.
       </motion.p>
       <motion.div
         initial={{ opacity: 0 }}

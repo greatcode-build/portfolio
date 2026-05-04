@@ -43,7 +43,7 @@ const Header = () => {
         className="max-w-2xl mx-auto font-ovo"
       >
         I build clean, modern, and scalable interfaces with smooth interactions
-        and strong user experience. I focus on performance, usability, and how
+        and strong user experience. I focus on performance, usability and how
         every product feels in real use.
       </motion.p>
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">

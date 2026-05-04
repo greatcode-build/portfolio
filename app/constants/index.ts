@@ -2,7 +2,8 @@ export const infoList = [
   {
     icon: "/images/code.png",
     title: "Languages",
-    description: "HTML, CSS, JAVASCRIPT, REACT, TAILWIND, NEXTJS",
+    description:
+      "HTML, CSS, JAVASCRIPT, TYPESCRIPT, REACT, TAILWIND CSS, NEXTJS",
   },
   {
     icon: "/images/education.png",
@@ -38,7 +39,7 @@ export const servicesList = [
     icon: "/icons/web-design.svg",
     title: "Web design",
     description:
-      "I build responsive web applications using HTML, CSS, React, Tailwind CSS, and Next.js, with a focus on performance and usability",
+      "I build responsive web applications using HTML, CSS, Javascript, Typescript, React, Tailwind CSS, and Next.js, with a focus on performance and usability",
   },
   {
     icon: "/images/ui.png",
@@ -99,8 +100,26 @@ export const workList = [
   },
   {
     title: "Homiva",
-    description: "Homiva landing page ",
+    description: "Homiva landing page",
     backgroundImage: "/images/homiva-image.png",
     link: "https://homiva.vercel.app/",
+  },
+  {
+    title: "Nature Cards",
+    description: "Card layout",
+    backgroundImage: "/images/nature-cards-image.png",
+    link: "https://nature-cards-steel.vercel.app/",
+  },
+  {
+    title: "Product Cube Carousel",
+    description: "3D product carousel",
+    backgroundImage: "/images/product-cube-carousel-image.png",
+    link: "https://product-cube-carousel.vercel.app/",
+  },
+  {
+    title: "Catalogue UI",
+    description: "Product catalog UI",
+    backgroundImage: "/images/catalogue-ui-image.png",
+    link: "https://catalogue-ui.vercel.app/",
   },
 ];
